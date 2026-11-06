@@ -1,0 +1,11 @@
+LINO NEGOCIOS V7 - INICIO DE SESIÓN GOOGLE (BASE)
+
+1. Abre lino-config.js y reemplaza PEGAR_API_KEY y PEGAR_APP_ID por los valores exactos de Firebase Console > Configuración del proyecto > Tus apps > Lino Negocios Web.
+2. En allowedEmails reemplaza PEGAR_TU_GMAIL por tu Gmail; agrega el Gmail del profesor cuando lo tengas.
+3. Sube TODOS los archivos de esta carpeta a Netlify (arrastrar carpeta o ZIP según el método de despliegue).
+4. Verifica que linonegocios.netlify.app siga en Firebase Authentication > Configuración > Dominios autorizados.
+5. Abre la web y pulsa Continuar con Google. Comprueba que otra cuenta no autorizada no pueda ver la interfaz.
+
+IMPORTANTE: Este acceso es una barrera de interfaz para una DEMOSTRACIÓN con datos locales ficticios, NO seguridad de servidor. Un usuario técnico podría eludir la barrera en una web estática. No introduzcas datos empresariales reales. NO hay conexión ni sincronización con Google Sheets todavía. Para datos privados y operaciones compartidas se necesita un backend que verifique tokens Firebase y permisos del lado del servidor, y un almacenamiento compartido con acceso restringido.
+
+No se modificó Lino Finanzas.
