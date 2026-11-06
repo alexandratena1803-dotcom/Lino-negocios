@@ -71,7 +71,8 @@ render=function(){previousRender();renderAnalytics()};
 setupProductForm();saveProducts();
 
 save();showPage('home');
-</script><script type="module">
+ <script src="lino-config.js"></script>
+<script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { firebaseConfig, allowedEmails } from './lino-config.js';
