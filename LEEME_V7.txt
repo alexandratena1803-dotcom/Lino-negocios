@@ -1,11 +1,9 @@
-LINO NEGOCIOS V7 - INICIO DE SESIÓN GOOGLE (BASE)
+LINO NEGOCIOS V7 — GOOGLE PARA CUALQUIER CUENTA
 
-1. Abre lino-config.js y reemplaza PEGAR_API_KEY y PEGAR_APP_ID por los valores exactos de Firebase Console > Configuración del proyecto > Tus apps > Lino Negocios Web.
-2. En allowedEmails reemplaza PEGAR_TU_GMAIL por tu Gmail; agrega el Gmail del profesor cuando lo tengas.
-3. Sube TODOS los archivos de esta carpeta a Netlify (arrastrar carpeta o ZIP según el método de despliegue).
-4. Verifica que linonegocios.netlify.app siga en Firebase Authentication > Configuración > Dominios autorizados.
-5. Abre la web y pulsa Continuar con Google. Comprueba que otra cuenta no autorizada no pueda ver la interfaz.
+1. Sube estos 7 archivos a la raíz del repositorio GitHub conectado a Netlify, reemplazando los archivos existentes con el mismo nombre.
+2. Espera a que Netlify termine el despliegue desde la rama main.
+3. Comprueba que Google esté habilitado como proveedor en Firebase Authentication.
+4. Comprueba que linonegocios.netlify.app esté incluido en Firebase Authentication > Configuración > Dominios autorizados.
+5. Abre https://linonegocios.netlify.app y prueba Continuar con Google.
 
-IMPORTANTE: Este acceso es una barrera de interfaz para una DEMOSTRACIÓN con datos locales ficticios, NO seguridad de servidor. Un usuario técnico podría eludir la barrera en una web estática. No introduzcas datos empresariales reales. NO hay conexión ni sincronización con Google Sheets todavía. Para datos privados y operaciones compartidas se necesita un backend que verifique tokens Firebase y permisos del lado del servidor, y un almacenamiento compartido con acceso restringido.
-
-No se modificó Lino Finanzas.
+Cualquier cuenta Google puede entrar. Esta versión sigue usando almacenamiento local por navegador; NO sincroniza con Google Sheets ni comparte los registros entre dispositivos. No guardes información empresarial real. La autenticación por sí sola no convierte una aplicación estática con datos locales en una base de datos segura.

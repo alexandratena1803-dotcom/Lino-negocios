@@ -71,11 +71,10 @@ render=function(){previousRender();renderAnalytics()};
 setupProductForm();saveProducts();
 
 save();showPage('home');
- <script src="lino-config.js"></script>
-<script type="module">
+</script><script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
-import { firebaseConfig, allowedEmails } from './lino-config.js';
+import { firebaseConfig } from './lino-config.js';
 const screen=document.getElementById('authScreen'), button=document.getElementById('googleLogin'), message=document.getElementById('authMessage');
 const logout=document.getElementById('logoutButton'), signed=document.getElementById('signedUser');
 const configured=!!firebaseConfig.apiKey && !firebaseConfig.apiKey.includes('PEGAR_');
@@ -87,10 +86,9 @@ else {
   button.onclick=async()=>{button.disabled=true;message.textContent='';try{await signInWithPopup(auth,provider)}catch(err){if(err.code==='auth/popup-blocked'||err.code==='auth/operation-not-supported-in-this-environment'){try{await signInWithRedirect(auth,provider);return}catch(e){err=e}}message.textContent='No se pudo iniciar sesión: '+(err.code||err.message)}finally{button.disabled=false}};
   getRedirectResult(auth).catch(err=>{message.textContent='Error de acceso: '+(err.code||err.message)});
   onAuthStateChanged(auth,async user=>{
-   const permitted=user && allowedEmails.some(e=>e.toLowerCase()===String(user.email||'').toLowerCase());
+   const permitted=!!user;
    screen.hidden=!!permitted;logout.style.display=permitted?'inline-block':'none';signed.textContent=permitted?user.email:'';
-   if(user&&!permitted){message.textContent='Esta cuenta no está autorizada para la demostración.';await signOut(auth)}
-   else if(!user){message.textContent='';}
+   if(!user){message.textContent='';}
   });
   logout.onclick=()=>signOut(auth);
  }catch(err){button.disabled=true;message.textContent='Error al inicializar Firebase: '+err.message}
